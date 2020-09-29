@@ -28,4 +28,7 @@ h6 {
 
 a {
   @extend %link;
+  &:hover {
+    color: $link-hover-color;
+  }
 }

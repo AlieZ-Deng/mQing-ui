@@ -48,7 +48,9 @@ $font-weight-bolder: bolder !default;
   font-weight: $font-weight-base;
   color: $smoke-blue;
   text-decoration: none;
+  transition : color .2s;
 }
+$link-hover-color: darken($smoke-blue, 20%) !default;
 
 // 字体家族
 $font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -57,4 +59,6 @@ $font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
   'Liberation Mono', 'Courier New', monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
 $font-family-base: $font-family-sans-serif !default;
