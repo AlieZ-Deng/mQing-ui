@@ -1,0 +1,60 @@
+// 基本颜色
+$white: #ffffff !default;
+$black: #000000 !default;
+$gray-8: rgba(0, 0, 0, 0.8) !default;
+$gray-6: rgba(0, 0, 0, 0.6) !default;
+$gray-4: rgba(0, 0, 0, 0.4) !default;
+$gray-2: rgba(0, 0, 0, 0.2) !default;
+$blue: #008cff !default;
+$smoke-blue: #a2c8df !default;
+$green: #23aaaa !default;
+$orange: #ff917d !default;
+$sand: #ffebdc !default; //灰白
+$red: #c00 !default;
+
+// 系统色彩
+$primary: $blue !default;
+$success: $green !default;
+$warn: $orange !default;
+$error: $red !default;
+
+// 字体大小
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-sm: $font-size-base * 0.875 !default; // 14
+$font-size-lg: $font-size-base * 1.25 !default; // 20
+
+// 标题大小
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
+
+// 字重
+$font-weight-base: 400 !default;
+$font-weight-light: 300 !default;
+$font-weight-lighter: 100 !default;
+$font-weight-bold: bold !default;
+$font-weight-bolder: bolder !default;
+
+// margin间距
+
+// padding间距
+
+// link
+%link {
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  color: $smoke-blue;
+  text-decoration: none;
+}
+
+// 字体家族
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+  'Liberation Mono', 'Courier New', monospace !default;
+$font-family-base: $font-family-sans-serif !default;
