@@ -41,8 +41,9 @@ const SubMenu: FC<ISubMenupProps> = ({
   const [subItemIndex, setSubItemIndex] = useState<string>(`${currentIndex}-0`);
 
   useEffect(() => {
-    console.log("asdasd", currentIndex);
-    //   setSubItemIndex(`${currentIndex}-0`);
+    if (currentIndex !== index) {
+      setSubItemIndex(`${currentIndex}-0`);
+    }
   }, [currentIndex]);
 
   const classes = classNames("sub-menu", className, {
@@ -66,10 +67,10 @@ const SubMenu: FC<ISubMenupProps> = ({
     return <ul>{liNode}</ul>;
   };
 
-  const onChangeHandler = (index: number) => {
-    setSubItemIndex(`${currentIndex}-${index}`);
+  const onChangeHandler = (id: number) => {
+    setSubItemIndex(`${index}-${id}`);
     if (onSelect) {
-      onSelect(`${currentIndex}-${index}`);
+      onSelect(`${index}-${id}`);
     }
   };
 
