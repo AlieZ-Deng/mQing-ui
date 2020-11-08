@@ -1,26 +1,78 @@
 import React from "react";
-// import "./App.css";
-import A from "./A";
+import Button, { ButtonTypes, ButtonSizes } from "./components/Button/Button";
+import Menu from "./components/Menu/Menu";
+import MenuItem from "./components/Menu/MenuItem";
+import SubMenu from "./components/Menu/subMenu";
 
 const App: React.FC = () => {
-  const a = "123";
-  if (a === "123") {
-  }
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Button
+        onClick={(e) => {
+          e.preventDefault();
+          console.log("asdasd");
+        }}
+      >
+        Default Button
+      </Button>
+      <Button btnType={ButtonTypes["Primary"]}>Primary Button</Button>
+      <Button btnType={ButtonTypes["Danger"]}>Danger Button</Button>
+      <Button size={ButtonSizes["Large"]}>Large Button</Button>
+      <Button size={ButtonSizes["Small"]}>Small Button</Button>
+      <Button btnType={ButtonTypes["Primary"]} disabled>
+        Disabled Button
+      </Button>
+      <Button btnType={ButtonTypes["Link"]} disabled href="http:baidu.com">
+        Disabled Link
+      </Button>
+      <Button
+        btnType={ButtonTypes["Link"]}
+        target="_blank"
+        href="https:baidu.com"
+      >
+        Link
+      </Button>
+      <Button
+        btnType={ButtonTypes["Link"]}
+        target="_blank"
+        href="https:baidu.com"
+      >
+        /learn react/i
+      </Button>
+      <Button btnType={ButtonTypes["Primary"]} isLoading={true}>
+        Loading Button
+      </Button>
+
+      <Menu
+        defaultIndex={1}
+        onSelect={(index) => {
+          // console.log(index);
+        }}
+      >
+        <MenuItem>Item 1</MenuItem>
+        <MenuItem>Item 2</MenuItem>
+        <SubMenu title="sss">
+          <MenuItem>Item 3</MenuItem>
+          <MenuItem>Item 4</MenuItem>
+        </SubMenu>
+        {/* <li></li> */}
+      </Menu>
+
+      <Menu
+        mode="vertical"
+        defaultIndex={1}
+        onSelect={(index) => {
+          console.log(index);
+        }}
+      >
+        <MenuItem index={0} disabled>
+          Item 1
+        </MenuItem>
+        <MenuItem index={1}>Item 2</MenuItem>
+        <MenuItem index={2}>Item 3</MenuItem>
+      </Menu>
+
+      <header className="App-header"></header>
     </div>
   );
 };

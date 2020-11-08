@@ -1,0 +1,65 @@
+@import "./variables";
+
+%disabled-staus {
+  opacity: $btn-disabled-opacity;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn {
+  margin: 0 5px;
+  cursor: pointer;
+  outline: none;
+  border-color: $btn-border-color;
+  text-align: center;
+  display: inline-block;
+  transition: all .4s;
+  //   vertical-align: middle;
+  @include btn-size(
+    $btn-padding-y,
+    $btn-padding-x,
+    $btn-font-size,
+    $btn-font-weight,
+    $btn-border-radius
+  );
+  @include btn-type($btn-font-default-color, $btn-bg, 1px,$btn-font-primary-color,$btn-font-primary-color);
+  &:disabled {
+    @extend %disabled-staus;
+  }
+}
+
+.btn-lg {
+  @include btn-size(
+    $btn-padding-y-lg,
+    $btn-padding-x-lg,
+    $btn-font-size-lg,
+    $btn-font-weight-lg,
+    $btn-border-radius-lg
+  );
+}
+
+.btn-sm {
+  @include btn-size(
+    $btn-padding-y-sm,
+    $btn-padding-x-sm,
+    $btn-font-size-sm,
+    $btn-font-weight-sm,
+    $btn-border-radius-sm
+  );
+}
+
+.btn-primary {
+  @include btn-type($btn-font-color, $btn-bg-primary);
+}
+
+.btn-danger {
+  @include btn-type($btn-font-color, $btn-bg-danger);
+}
+
+.btn-link {
+  @include btn-type($btn-font-primary-color, $btn-bg);
+}
+
+.disabled {
+  @extend %disabled-staus;
+}
