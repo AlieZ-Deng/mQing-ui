@@ -3,6 +3,11 @@ import Button, { ButtonTypes, ButtonSizes } from './components/Button/Button';
 import Menu from './components/Menu/Menu';
 import MenuItem from './components/Menu/MenuItem';
 import SubMenu from './components/Menu/subMenu';
+import {
+  LoadingSpinner,
+  LoadingRoundSpinner,
+  LoadingZoomSpinner,
+} from './components/Loading';
 
 const App: React.FC = () => {
   return (
@@ -75,6 +80,12 @@ const App: React.FC = () => {
           <MenuItem>Item 5</MenuItem>
         </SubMenu>
       </Menu>
+
+      <LoadingSpinner />
+
+      <LoadingRoundSpinner />
+
+      <LoadingZoomSpinner />
 
       <header className='App-header'></header>
     </div>

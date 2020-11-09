@@ -58,6 +58,7 @@ describe('test menu component', () => {
     activeEle = wrapper.getByText('active');
     disabledEle = wrapper.getByText('disabled');
   });
+  
   test('test1', () => {
     expect(menuEle).toBeInTheDocument();
     expect(menuEle).toHaveClass('menu test');
@@ -65,6 +66,7 @@ describe('test menu component', () => {
     expect(activeEle).toHaveClass('menu-item menu-item-active');
     expect(disabledEle).toHaveClass('menu-item menu-item-disabled');
   });
+
   test('test2', () => {
     const normalEle = wrapper.getByText('normal');
     fireEvent.click(normalEle);
@@ -73,6 +75,7 @@ describe('test menu component', () => {
     expect(normalEle).toHaveClass('menu-item-active');
     expect(activeEle).not.toHaveClass('menu-item-active');
   });
+
   test('test3', () => {
     cleanup();
     wrapper = render(testComponent(modeTestProps));
