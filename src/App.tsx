@@ -1,45 +1,45 @@
-import React from "react";
-import Button, { ButtonTypes, ButtonSizes } from "./components/Button/Button";
-import Menu from "./components/Menu/Menu";
-import MenuItem from "./components/Menu/MenuItem";
-import SubMenu from "./components/Menu/subMenu";
+import React from 'react';
+import Button, { ButtonTypes, ButtonSizes } from './components/Button/Button';
+import Menu from './components/Menu/Menu';
+import MenuItem from './components/Menu/MenuItem';
+import SubMenu from './components/Menu/subMenu';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <div className='App'>
       <Button
         onClick={(e) => {
           e.preventDefault();
-          console.log("asdasd");
+          console.log('asdasd');
         }}
       >
         Default Button
       </Button>
-      <Button btnType={ButtonTypes["Primary"]}>Primary Button</Button>
-      <Button btnType={ButtonTypes["Danger"]}>Danger Button</Button>
-      <Button size={ButtonSizes["Large"]}>Large Button</Button>
-      <Button size={ButtonSizes["Small"]}>Small Button</Button>
-      <Button btnType={ButtonTypes["Primary"]} disabled>
+      <Button btnType={ButtonTypes['Primary']}>Primary Button</Button>
+      <Button btnType={ButtonTypes['Danger']}>Danger Button</Button>
+      <Button size={ButtonSizes['Large']}>Large Button</Button>
+      <Button size={ButtonSizes['Small']}>Small Button</Button>
+      <Button btnType={ButtonTypes['Primary']} disabled>
         Disabled Button
       </Button>
-      <Button btnType={ButtonTypes["Link"]} disabled href="http:baidu.com">
+      <Button btnType={ButtonTypes['Link']} disabled href='http:baidu.com'>
         Disabled Link
       </Button>
       <Button
-        btnType={ButtonTypes["Link"]}
-        target="_blank"
-        href="https:baidu.com"
+        btnType={ButtonTypes['Link']}
+        target='_blank'
+        href='https:baidu.com'
       >
         Link
       </Button>
       <Button
-        btnType={ButtonTypes["Link"]}
-        target="_blank"
-        href="https:baidu.com"
+        btnType={ButtonTypes['Link']}
+        target='_blank'
+        href='https:baidu.com'
       >
         /learn react/i
       </Button>
-      <Button btnType={ButtonTypes["Primary"]} isLoading={true}>
+      <Button btnType={ButtonTypes['Primary']} isLoading={true}>
         Loading Button
       </Button>
 
@@ -51,7 +51,7 @@ const App: React.FC = () => {
       >
         <MenuItem>Item 1</MenuItem>
         <MenuItem>Item 2</MenuItem>
-        <SubMenu title="sss">
+        <SubMenu title='SubMenuItem'>
           <MenuItem>Item 3</MenuItem>
           <MenuItem>Item 4</MenuItem>
         </SubMenu>
@@ -59,7 +59,7 @@ const App: React.FC = () => {
       </Menu>
 
       <Menu
-        mode="vertical"
+        mode='vertical'
         defaultIndex={1}
         onSelect={(index) => {
           console.log(index);
@@ -70,9 +70,13 @@ const App: React.FC = () => {
         </MenuItem>
         <MenuItem index={1}>Item 2</MenuItem>
         <MenuItem index={2}>Item 3</MenuItem>
+        <SubMenu title='SubMenuItem'>
+          <MenuItem>Item 4</MenuItem>
+          <MenuItem>Item 5</MenuItem>
+        </SubMenu>
       </Menu>
 
-      <header className="App-header"></header>
+      <header className='App-header'></header>
     </div>
   );
 };
