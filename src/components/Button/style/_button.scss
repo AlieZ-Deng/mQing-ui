@@ -1,4 +1,4 @@
-@import "./variables";
+@import './variables';
 
 %disabled-staus {
   opacity: $btn-disabled-opacity;
@@ -7,13 +7,14 @@
 }
 
 .btn {
+  position: relative;
   margin: 0 5px;
   cursor: pointer;
   outline: none;
   border-color: $btn-border-color;
   text-align: center;
   display: inline-block;
-  transition: all .4s;
+  transition: all 0.4s;
   //   vertical-align: middle;
   @include btn-size(
     $btn-padding-y,
@@ -22,9 +23,20 @@
     $btn-font-weight,
     $btn-border-radius
   );
-  @include btn-type($btn-font-default-color, $btn-bg, 1px,$btn-font-primary-color,$btn-font-primary-color);
+  @include btn-type(
+    $btn-font-default-color,
+    $btn-bg,
+    1px,
+    $btn-font-primary-color,
+    $btn-font-primary-color
+  );
   &:disabled {
     @extend %disabled-staus;
+  }
+
+  .loading-containner {
+    margin-right: $btn-padding-x;
+    zoom: 0.142;
   }
 }
 
@@ -36,6 +48,10 @@
     $btn-font-weight-lg,
     $btn-border-radius-lg
   );
+  .loading-containner {
+    margin-right: $btn-padding-x-lg;
+    zoom: 0.15;
+  }
 }
 
 .btn-sm {
@@ -46,6 +62,10 @@
     $btn-font-weight-sm,
     $btn-border-radius-sm
   );
+  .loading-containner {
+    margin-right: $btn-padding-x-sm;
+    zoom: 0.12;
+  }
 }
 
 .btn-primary {

@@ -3,10 +3,13 @@ import Button, { ButtonTypes, ButtonSizes } from './components/Button/Button';
 import Menu from './components/Menu/Menu';
 import MenuItem from './components/Menu/MenuItem';
 import SubMenu from './components/Menu/subMenu';
+
 import {
   LoadingSpinner,
   LoadingRoundSpinner,
   LoadingZoomSpinner,
+  LoadingEllipsis,
+  LoadingEllipsisActive,
 } from './components/Loading';
 
 const App: React.FC = () => {
@@ -45,6 +48,31 @@ const App: React.FC = () => {
         /learn react/i
       </Button>
       <Button btnType={ButtonTypes['Primary']} isLoading={true}>
+        Loading Button
+      </Button>
+      <Button
+        btnType={ButtonTypes['Primary']}
+        size={ButtonSizes['Small']}
+        isLoading={true}
+      >
+        Loading Button
+      </Button>
+      <Button
+        btnType={ButtonTypes['Primary']}
+        size={ButtonSizes['Large']}
+        isLoading={true}
+      >
+        Loading Button
+      </Button>
+      <Button
+        isLoading={true}
+        btnType={ButtonTypes['Primary']}
+        size={ButtonSizes['Large']}
+        loadingType='zoom-spinner'
+      >
+        Loading Button
+      </Button>
+      <Button btnType={ButtonTypes['Primary']} isLoading={true} loadingType="ellipsis">
         Loading Button
       </Button>
 
@@ -86,6 +114,10 @@ const App: React.FC = () => {
       <LoadingRoundSpinner />
 
       <LoadingZoomSpinner />
+
+      <LoadingEllipsis></LoadingEllipsis>
+
+      <LoadingEllipsisActive />
 
       <header className='App-header'></header>
     </div>
