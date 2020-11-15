@@ -53,19 +53,14 @@ function renderLoading(type: loadingTypes) {
   switch (type) {
     case 'spinner':
       return <LoadingSpinner />;
-      break;
     case 'round-spinner':
       return <LoadingRoundSpinner />;
-      break;
     case 'zoom-spinner':
       return <LoadingZoomSpinner />;
-      break;
     case 'ellipsis':
       return <LoadingEllipsis />;
-      break;
     case 'ellipsis-active':
       return <LoadingEllipsisActive />;
-      break;
   }
 }
 

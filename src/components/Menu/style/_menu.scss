@@ -47,10 +47,13 @@
       padding: $menu-item-padding-y $menu-item-padding-x;
       &:hover .sub-menu-ul {
         opacity: 1;
+        // display: block;
       }
       .sub-menu-ul {
         transition: opacity 0.5;
+        // transition: display 5.5;
         opacity: 0;
+        // display: none;
         min-width: 100px;
         border: $sub-menu-ul-border-width solid $sub-menu-ul-border-color;
         position: absolute;

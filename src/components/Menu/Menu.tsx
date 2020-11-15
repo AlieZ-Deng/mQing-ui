@@ -16,7 +16,7 @@ export interface IMenuProps {
 }
 
 interface IMenuContext {
-  index?: number;
+  index: number;
   onSelect?: SelectFn;
 }
 
