@@ -2,7 +2,7 @@ import notificationDOM from "./notification";
 // import "./toast.css";
 
 interface IFn {
-  (title: string, duration: number, onClose: () => void, type?: string): void;
+  (title: string, duration?: number, onClose?: () => void, type?: string): void;
 }
 
 interface IObj {

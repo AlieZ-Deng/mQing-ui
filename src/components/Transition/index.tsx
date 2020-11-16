@@ -26,7 +26,7 @@ const index: FC<transition> = ({
   key,
   ...restProps
 }) => {
-  console.log({ ...restProps });
+  // console.log({ ...restProps });
   return (
     <CSSTransition
       {...restProps}
