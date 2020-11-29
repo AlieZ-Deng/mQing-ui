@@ -1,41 +1,41 @@
-import React, { FC, useRef, useState } from "react";
-import ReactDOM from "react-dom";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
-import Message, { messageType } from "./message";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { FC, useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
+import { TransitionGroup } from 'react-transition-group';
+import Transition from './../Transition/index';
+import Message, { messageType } from './message';
+import './index.scss'
 
 interface IOinfo {
-  type?: messageType;
-  title: string;
-  duration?: number;
+  type: messageType;
+  content: string;
+  duration: number;
   onClose?: () => void;
-  key?: string;
+  key: string;
 }
 
 interface INotification {
-  ref?: React.RefObject<HTMLElement>;
-  //   ref?: any;
+  notice: IOinfo;
 }
 
-const Notification: FC<INotification> = (props) => {
+const Notification: FC<INotification> = ({ notice }) => {
   const [infos, setInfos] = useState<IOinfo[]>([]);
   const timeout: number = 300;
-
   const addNotice = (notice: IOinfo) => {
-    const newArr = infos;
     notice.key = getNoticeKey();
-    newArr.unshift(notice);
-    setInfos(newArr);
-    if (notice.duration && notice.duration > 0) {
-      setTimeout(() => {
-        removeNotice(notice.key as string);
-      }, notice.duration);
-    }
+    setInfos((data) => {
+      let newArr = [...data];
+      newArr.unshift(notice);
+      return newArr;
+    });
   };
+  useEffect(() => {
+    addNotice(notice);
+  }, [notice]);
 
   const removeNotice = (key: string) => {
     const newArr = infos.filter((item) => {
       if (item.key === key) {
-        if (item.onClose) setTimeout(item.onClose, 0);
         return false;
       }
       return true;
@@ -44,16 +44,23 @@ const Notification: FC<INotification> = (props) => {
   };
 
   const getNoticeKey = () => {
-    return `notice-${new Date().getTime()}-${infos.length + 1}`;
+    return `notice-${new Date().getTime()}`;
   };
 
   return (
-    <TransitionGroup>
+    <TransitionGroup className={`${infos.length > 0 ? 'group' : ''}`}>
       {infos.map((item, index) => {
         return (
-          <CSSTransition key={index} timeout={timeout}>
-            <Message title={item.title} type={item.type}></Message>;
-          </CSSTransition>
+          <Transition timeout={timeout} key={index}>
+            <Message
+              id={item.key}
+              close={removeNotice}
+              content={item.content}
+              type={item.type}
+              duration={item.duration}
+              onClose={item.onClose}
+            ></Message>
+          </Transition>
         );
       })}
     </TransitionGroup>
@@ -61,14 +68,11 @@ const Notification: FC<INotification> = (props) => {
 };
 
 const createNotification = () => {
-  const div = document.createElement("div");
+  const div = document.createElement('div');
   document.body.appendChild(div);
-  //   const ref = React.createRef();
-  const ref = useRef<any>(null);
-  ReactDOM.render(<Notification ref={ref} />, div);
   return {
     addNotice(notice: IOinfo) {
-      //   return ref.current!.addNotice(notice);
+      ReactDOM.render(<Notification notice={notice} />, div);
     },
     destroy() {
       ReactDOM.unmountComponentAtNode(div);
