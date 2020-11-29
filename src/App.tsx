@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import Button, { ButtonTypes, ButtonSizes } from "./components/Button/Button";
 import Menu from "./components/Menu/Menu";
 import MenuItem from "./components/Menu/MenuItem";
 import SubMenu from "./components/Menu/subMenu";
 import Transition from "./components/Transition";
 import { TransitionGroup } from "react-transition-group";
+import Input from "./components/Input/Input";
+import AutoComplete from "./components/AutoComplete";
 
 import {
   LoadingSpinner,
@@ -15,9 +17,32 @@ import {
 } from "./components/Loading";
 
 const App: React.FC = () => {
+  const [data, setData] = useState<any[]>(["1", "2", "3"]);
   const [show, setShow] = useState<boolean>(false);
+  const [value, setValue] = useState<string>("");
   return (
     <div className="App">
+      <AutoComplete
+        dataSource={data}
+        onSelect={(item) => {
+          console.log(item);
+        }}
+        onChange={(a) => {
+          // console.log(a);
+          // const b = data.filter((item) => item === a);
+          // setData(b);
+        }}
+      />
+      {/* <Input
+        append="123"
+        defaultValue={"asdsadasd"}
+        value={value}
+        onChange={(e) => {
+          const event = e as ChangeEvent<HTMLInputElement>;
+          setValue(event.target.value);
+        }}
+      /> */}
+      <Input prepand={<div>我草拟</div>} />
       <Button
         onClick={(e) => {
           e.preventDefault();
@@ -129,7 +154,9 @@ const App: React.FC = () => {
       <div>
         <Button onClick={() => setShow(!show)}>展现</Button>
       </div>
-      <Transition in={show} timeout={300}><div>sdasdasdas</div></Transition>
+      <Transition in={show} timeout={300}>
+        <div>sdasdasdas</div>
+      </Transition>
       <TransitionGroup></TransitionGroup>
       <header className="App-header"></header>
     </div>
