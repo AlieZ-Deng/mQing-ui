@@ -1,0 +1,22 @@
+@import './../../../styles/variables';
+@import './../../Input/style/variables';
+
+.table {
+  width: fit-content;
+  .content-wrap {
+    background-color: white;
+    border-radius: $input-border-radius;
+    ul {
+      li {
+        border-radius: $input-border-radius;
+        cursor: pointer;
+        color: $gray-6;
+        line-height: 30px;
+        padding-left: $input-padding-x;
+        &.active {
+          background-color: #eee;
+        }
+      }
+    }
+  }
+}

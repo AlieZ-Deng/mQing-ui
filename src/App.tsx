@@ -1,23 +1,13 @@
-<<<<<<< HEAD
-import React, { ChangeEvent, useState } from "react";
-import Button, { ButtonTypes, ButtonSizes } from "./components/Button/Button";
-import Menu from "./components/Menu/Menu";
-import MenuItem from "./components/Menu/MenuItem";
-import SubMenu from "./components/Menu/subMenu";
-import Transition from "./components/Transition";
-import { TransitionGroup } from "react-transition-group";
-import Input from "./components/Input/Input";
-import AutoComplete from "./components/AutoComplete";
-=======
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import Button, { ButtonTypes, ButtonSizes } from './components/Button/Button';
 import Menu from './components/Menu/Menu';
 import MenuItem from './components/Menu/MenuItem';
 import SubMenu from './components/Menu/subMenu';
 import Transition from './components/Transition';
 import { TransitionGroup } from 'react-transition-group';
+import Input from './components/Input/Input';
+import AutoComplete from './components/AutoComplete';
 import Toast from './components/Toast';
->>>>>>> 01dfff3ce3f62b45cb3e96bcb0300839e3a75855
 
 import {
   LoadingSpinner,
@@ -28,11 +18,11 @@ import {
 } from './components/Loading';
 
 const App: React.FC = () => {
-  const [data, setData] = useState<any[]>(["1", "2", "3"]);
+  const [data, setData] = useState<any[]>(['1', '2', '3']);
   const [show, setShow] = useState<boolean>(false);
-  const [value, setValue] = useState<string>("");
+  const [value, setValue] = useState<string>('');
   return (
-    <div className="App">
+    <div className='App'>
       <AutoComplete
         dataSource={data}
         onSelect={(item) => {
@@ -53,7 +43,22 @@ const App: React.FC = () => {
           setValue(event.target.value);
         }}
       /> */}
-      <Input prepand={<div>我草拟</div>} />
+      <Input />
+      {/* <Input size='lg' placeholder='large input' prepand='adsad'/> */}
+      <Input
+        size='sm'
+        placeholder='small input'
+        append={
+          <div
+            onClick={() => {
+              console.log('asdas');
+            }}
+          >
+            asdsada
+          </div>
+        }
+      />
+      <Input disabled defaultValue='disabled' />
       <Button
         onClick={(e) => {
           e.preventDefault();

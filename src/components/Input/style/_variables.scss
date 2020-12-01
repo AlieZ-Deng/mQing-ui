@@ -1,0 +1,51 @@
+@import './../../../styles/variables';
+$input-font-family: $font-family-base !default;
+$input-font-color: $gray-8 !default;
+
+// 输入框大小padding
+$input-padding-y: 0.375rem !default;
+$input-padding-x: 0.65rem !default;
+
+$input-padding-y-sm: 0.25rem !default;
+$input-padding-x-sm: 0.5rem !default;
+
+$input-padding-y-lg: 0.5rem !default;
+$input-padding-x-lg: 0.8rem !default;
+
+// 输入框字体大小fontsize
+$input-font-size: $font-size-base !default;
+$input-font-size-sm: $font-size-sm !default;
+$input-font-size-lg: $font-size-lg !default;
+
+// 输入框圆角大小
+$input-border-radius: $border-radius !default;
+$input-border-radius-lg: $border-radius-lg !default;
+$input-border-radius-sm: $border-radius-sm !default;
+
+// 输入框边框
+$input-border-color: $gray-6 !default;
+$input-border-width: 1.5px !default;
+
+// 输入框禁用状态
+$input-disabled-border-color: $gray-4 !default;
+$input-disabled-bg: $gray-2 !default;
+$input-disabled-color: $gray-4 !default;
+
+// 输入框聚焦状态
+$input-hover-border-color: lighten($primary, 2%) !default;
+$input-focus-border-color: lighten($primary, 30%) !default;
+
+// 输入框默认显示样式
+$input-placeholder-color: $gray-2 !default;
+
+// $input-focus-box-shadow: 0 0 0 $input-focus-width $input-focus-shadow-color !default;
+
+// $input-plaintext-color: $body-color !default;
+
+// $input-height-border: $input-border-width * 2 !default;
+
+// $input-transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out !default;
+
+// $input-group-addon-color: $input-color !default;
+// $input-group-addon-bg: $gray-200 !default;
+// $input-group-addon-border-color: $input-border-color !default;

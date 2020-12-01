@@ -1,0 +1,86 @@
+@import './variables';
+
+.input {
+  margin: 10px 0;
+  width: fit-content;
+  border: $input-border-width solid $input-border-color;
+  position: relative;
+  border-radius: $input-border-radius;
+  &:hover {
+    border-color: $input-hover-border-color;
+  }
+  &.input-border {
+    box-shadow: 0px 0px 4px 0.5px $input-focus-border-color;
+    border-color: $input-hover-border-color;
+  }
+
+  input {
+    border-radius: inherit;
+    outline: none;
+    border: 0px;
+    color: $input-font-color;
+    font-family: $input-font-family;
+    padding: $input-padding-y $input-padding-x;
+    font-size: $input-font-size;
+    &:focus {
+      //
+    }
+    &::-webkit-input-placeholder {
+      color: $input-placeholder-color;
+    }
+    &::-moz-input-placeholder {
+      color: $input-placeholder-color;
+    }
+    &::-ms-input-placeholder {
+      color: $input-placeholder-color;
+    }
+  }
+}
+
+.input-lg {
+  font-size: $input-font-size-lg;
+  border-radius: $input-border-radius-lg;
+  input {
+    font-size: inherit;
+    padding: $input-padding-y-lg $input-padding-x-lg;
+  }
+}
+
+.input-sm {
+  border-radius: $input-border-radius-sm;
+  font-size: $input-font-size-sm;
+  input {
+    font-size: inherit;
+    padding: $input-padding-y-sm $input-padding-x-sm;
+  }
+}
+
+.input-disabled {
+  border-color: $input-disabled-border-color;
+  background-color: $input-disabled-bg;
+  &:hover {
+    border-color: $input-disabled-border-color;
+  }
+  input {
+    cursor: no-drop;
+    color: $input-disabled-color;
+  }
+}
+
+.input-append,
+.input-prepand {
+  .node-item {
+    font-size: inherit;
+    color: $primary;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.input-append {
+  .node-item {
+    z-index: 10;
+    right: 1.5%;
+  }
+}
