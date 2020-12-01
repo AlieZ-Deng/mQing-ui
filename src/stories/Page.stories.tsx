@@ -6,13 +6,14 @@ import { Page, PageProps } from './Page';
 import * as HeaderStories from './Header.stories';
 
 export default {
-  title: 'Example/Page',
+  title: 'Example/页面',
   component: Page,
 } as Meta;
 
 const Template: Story<PageProps> = (args) => <Page {...args} />;
 
 export const LoggedIn = Template.bind({});
+LoggedIn.storyName = '登录'
 LoggedIn.args = {
   ...HeaderStories.LoggedIn.args,
 };
